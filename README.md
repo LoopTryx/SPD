@@ -14,8 +14,8 @@ Interested in helping? Start with the [project vision](VISION.md),
 
 ## Install
 
-Run the Windows x64 setup executable in `installers/` (Git LFS is required to
-download it). On first run,
+Download the Windows x64 beta setup executable from the [releases page](https://github.com/LoopTryx/SPD/releases).
+An older beta installer is also kept in `installers/` through Git LFS. On first run,
 SPD opens setup so you can choose the camera, display, gesture options and
 whether SPD starts with Windows. Use the system tray to reopen settings.
 Unsigned beta installers can trigger a Windows reputation warning. The project

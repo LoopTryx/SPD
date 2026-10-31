@@ -1,5 +1,14 @@
 # Change history
 
+## 0.8.0 beta — 2026-10-31
+
+- Initial Windows x64 beta, with webcam-driven pointer and gestures, optional
+  snapping, first-run settings and an opt-in startup preference.
+- Includes configurable index/pinky click swapping, pause and emergency release.
+- This beta is unsigned, has no automatic update feed and has not been verified
+  across Windows devices or fresh installations. Model and third-party
+  redistribution review remains open; see `docs/third-party-notices.md`.
+
 ## Unreleased — Windows setup and preferences — 2026-10-31
 
 - Added first-run settings, an opt-in Windows startup preference for installed
