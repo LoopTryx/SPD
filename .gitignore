@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.electron-build/
+*.log
+release/
+.native-build/
+.release-build/
+native/**/bin/
+native/**/obj/
+*.pfx
+*.p12
+.env
+.env.*
+.source-checkpoints/

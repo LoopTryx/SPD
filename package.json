@@ -1,0 +1,40 @@
+{
+  "name": "spatial-pointer-device",
+  "version": "1.0.0-beta.1",
+  "private": true,
+  "description": "A camera-driven spatial pointer overlay for Windows.",
+  "main": ".electron-build/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "npm run build && set NODE_ENV=production && electron .",
+    "build": "tsc -p tsconfig.electron.json && vite build",
+    "typecheck": "tsc --noEmit",
+    "test:run": "vitest run",
+    "test:packaging": "node --test scripts/*.test.cjs",
+    "build:native": "powershell -NoProfile -ExecutionPolicy Bypass -File native/build.ps1",
+    "package:beta": "node scripts/package-windows.cjs beta",
+    "package:public": "node scripts/package-windows.cjs public",
+    "release:preflight": "node scripts/release-preflight.cjs",
+    "verify:artifacts": "node scripts/verify-artifacts.cjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "electron-updater": "6.8.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@electron/asar": "4.3.0",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "electron": "44.1.0",
+    "electron-builder": "26.15.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11",
+    "yaml": "2.9.0"
+  }
+}
