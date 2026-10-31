@@ -12,3 +12,5 @@ native/**/obj/
 .env
 .env.*
 .source-checkpoints/
+.freebuff/
+native/.tools/

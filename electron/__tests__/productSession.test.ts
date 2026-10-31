@@ -61,6 +61,12 @@ test('failed persistence keeps old settings but pauses safely', () => {
   expect(() => session.changeSettings({ sensitivity: 'responsive' })).toThrow('disk full');
   expect(session.settings.sensitivity).toBe('balanced'); expect(session.paused).toBe(true);
 });
+test('successful settings changes broadcast the newly saved preferences',()=>{
+  const observed:boolean[]=[];
+  const session=new ProductSession(defaultSettings(),()=>{},()=>{},()=>observed.push(session.settings.swapClicks));
+  session.changeSettings({swapClicks:true});
+  expect(observed.at(-1)).toBe(true);
+});
 test('calibration cannot be saved outside a requested calibration or for another camera', () => {
   const { session } = setup();
   expect(() => session.saveCalibration(calibration)).toThrow();

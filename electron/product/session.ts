@@ -39,6 +39,7 @@ export class ProductSession {
     this.settings = next;
     if (deviceChanged) this.runtime = { ...this.runtime, status: 'loading' };
     this.changed();
+    this.changed();
   }
   saveCalibration(calibration: AttentionCalibration): void {
     if (!this.calibrating || !this.paused) throw new Error('Start calibration from SPD Settings');

@@ -33,7 +33,7 @@ second application instance.
 | center-proximity-pinch-continuity-20261030 | Center-only magnetism, shorter click dwell and bounded candidate jitter tolerance | 306 tests, typecheck/build and native center-lock smoke with simulated input |
 
 Checkpoints are local source copies with per-file SHA-256 manifests.
-No commits or remote changes were made; original Git staging is preserved.
+These historical checkpoints predate the publication repository. The publication copy has its own local Git history; the original checkout staging is preserved.
 
 ## Migration procedure
 
