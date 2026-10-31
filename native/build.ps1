@@ -13,7 +13,13 @@ if (-not (Test-Path -LiteralPath $dotnetExe)) {
     if (-not $sdkFile) { throw "Missing official SDK $sdkVersion" }
     $archive = Join-Path $toolDir "dotnet-sdk-$sdkVersion.zip"
     Invoke-WebRequest $sdkFile.url -OutFile $archive
-    if ((Get-FileHash -LiteralPath $archive -Algorithm SHA512).Hash -ne $sdkFile.hash) {
+    # Windows PowerShell on some hosted runners does not expose Get-FileHash.
+    # Stream through .NET so the official SDK checksum is still enforced.
+    $stream = [System.IO.File]::OpenRead($archive)
+    $hasher = [System.Security.Cryptography.SHA512]::Create()
+    try { $digest = [BitConverter]::ToString($hasher.ComputeHash($stream)).Replace('-', '') }
+    finally { $hasher.Dispose(); $stream.Dispose() }
+    if ($digest -ne $sdkFile.hash) {
         throw 'SDK archive checksum mismatch'
     }
     Expand-Archive -LiteralPath $archive -DestinationPath $sdkDir -Force

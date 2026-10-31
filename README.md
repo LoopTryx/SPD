@@ -8,6 +8,10 @@ blue edge glow and pointer ring. Tracking runs locally using MediaPipe.
 camera, lighting and hand position. Windows 10 and 11 x64 are targets; the app
 has not been validated on every device. macOS and Linux are future work.
 
+Interested in helping? Start with the [project vision](VISION.md),
+[roadmap](ROADMAP.md), [contribution guide](CONTRIBUTING.md), and
+[open issues](https://github.com/LoopTryx/SPD/issues).
+
 ## Install
 
 Run the Windows x64 setup executable in `installers/` (Git LFS is required to

@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible problem with SPD
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open SPD\n2. ..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: SPD version, Windows version and camera
+      description: Do not include serial numbers or other personal identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant evidence and test conditions
+      description: Include lighting, hand pose or display scale when relevant. Remove private content; never upload recordings of another person without consent.
